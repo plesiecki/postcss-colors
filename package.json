@@ -1,0 +1,48 @@
+{
+  "name": "postcss-colors",
+  "version": "0.0.1",
+  "description": "PostCSS plugin for colors management",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "color",
+    "background-color",
+    "border-color",
+    "palette"
+  ],
+  "author": "plesiecki",
+  "license": "MIT",
+  "repository": "plesiecki/postcss-colors",
+  "bugs": {
+    "url": "https://github.com/plesiecki/postcss-colors/issues"
+  },
+  "homepage": "https://github.com/plesiecki/postcss-colors",
+  "dependencies": {
+    "postcss": "^5.0.16"
+  },
+  "devDependencies": {
+    "ava": "^0.12.0",
+    "babel-cli": "^6.5.1",
+    "babel-plugin-array-includes": "^2.0.3",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-register": "^6.5.2",
+    "npm-run-all": "^1.5.1",
+    "postcss-message-helpers": "^2.0.0",
+    "xo": "^0.12.1"
+  },
+  "scripts": {
+    "lint": "xo src/*",
+    "test": "ava",
+    "build": "babel src -o index.js",
+    "prepublish": "npm-run-all --parallel lint test build"
+  },
+  "xo": {
+    "space": 4,
+    "esnext": true
+  },
+  "babel": {
+    "presets": ["es2015"],
+    "plugins": ["array-includes"]
+  }
+}
