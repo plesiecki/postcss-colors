@@ -1,6 +1,6 @@
 {
   "name": "postcss-colors",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "PostCSS plugin for colors management",
   "keywords": [
     "postcss",
@@ -29,11 +29,12 @@
     "babel-register": "^6.5.2",
     "npm-run-all": "^1.5.1",
     "postcss-message-helpers": "^2.0.0",
+    "tap-diff": "^0.1.1",
     "xo": "^0.12.1"
   },
   "scripts": {
     "lint": "xo src/*",
-    "test": "ava",
+    "test": "ava --tap | tap-diff",
     "build": "babel src -o index.js",
     "prepublish": "npm-run-all --parallel lint test build"
   },
@@ -42,7 +43,11 @@
     "esnext": true
   },
   "babel": {
-    "presets": ["es2015"],
-    "plugins": ["array-includes"]
+    "presets": [
+      "es2015"
+    ],
+    "plugins": [
+      "array-includes"
+    ]
   }
 }

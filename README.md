@@ -1,16 +1,21 @@
 in:
 ```css
-@colors {
-    foo: black
+@colors palette {
+    foo: black;
+    bar: white;
 }
-
-.bar {
-    color: foo
+@colors {
+    link-color: bar;
+}
+.baz {
+    background-color: foo;
+    color: link-color;
 }
 ```
 out:
 ```css
-.bar {
-    color: black
+.baz {
+    background-color: black;
+    color: white;
 }
 ```
