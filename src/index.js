@@ -36,7 +36,7 @@ export default postcss.plugin('postcss-colors', () => {
             }
         });
 
-        css.walkDecls('color', decl => {
+        css.walkDecls(decl => {
             if (!PROPS.includes(decl.prop) || !decl.value || !KEYWORD_REGEX.test(decl.value)) {
                 return;
             }
