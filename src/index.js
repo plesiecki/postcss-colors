@@ -10,7 +10,8 @@ const PROPS = [
     'outline',
     'outline-color',
     'text-shadow',
-    'box-shadow'
+    'box-shadow',
+    'fill'
 ];
 
 const replace = (value, args) => value.replace(...args);
